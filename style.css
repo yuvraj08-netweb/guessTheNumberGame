@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.gameContainer{
+    display: flex;
+    margin-top: 70px;
+    display: none;
+}
+.buttons{
+    margin-left: 20px;
+}
+.buttons button{
+    padding: 5px 12px;
+}
+input#userNumber{
+    padding: 4px;
+    width: 200px;
+}
+.rules{
+    color: rgb(16, 16, 16);
+    background-color: rgb(206, 208, 210);
+    padding: 20px;
+}
+.rules h2{
+    margin-bottom: 22px;
+}
+.attemptsCounterContainer{
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 70px;
+    text-align: left;
+    font-size: 15px;
+    font-style: italic;
+}
+#alert{
+    color: rgb(197, 17, 17);
+    font-size: 12px;
+
+}
+#submitButton{
+    background-color: green;
+    color: aliceblue;
+}
+#restartButton{
+    background-color: brown;
+    color: aliceblue;
+}
+
+.heroButton button{
+    margin-top: 40px;
+    padding: 12px 17px;
+    background-color: rgb(100, 100, 244);
+    color: antiquewhite;
+    font-weight: 700;
+    border-radius: 10px;
+}
+.heroContainer{
+    margin-top: 50px;
+    font-size: 45px;
+    color: green;
+}

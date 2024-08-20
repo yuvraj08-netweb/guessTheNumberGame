@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game | Yuvraj</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rules">
+            <h2>Game Rules : </h2>
+            <ol>
+                <li>Enter Number From 1 - 100</li>
+                <li>Click Submit Button To Check Your Guess</li>
+                <li>Hit The Restart Button To Restart Your Game</li>
+            </ol>
+        </div>
+        <div class="heroButton">
+            <button id="startGame" onclick="startGame()">Start Game!</button>
+        </div>
+        <div class="gameContainer">
+            <div class="inputUserValue">
+                <div class="userInput">
+                    <input type="number" name="userNumber" id="userNumber" placeholder="Enter Number" min="1" max="100">
+                </div>
+                <div class="alertBox">
+                    <span id="alert"></span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="submitButton" onclick="handleSubmit()">Submit</button>
+                <button id="restartButton" onclick="handleRestart()">Restart</button>
+            </div>
+        </div>
+        <div class="heroContainer">
+            <h5 id="heroText"></h5>
+        </div>
+        <div class="attemptsCounterContainer">
+            <span class="attemptsCounter"></span>
+        </div>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
