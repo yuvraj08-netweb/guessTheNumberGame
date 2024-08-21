@@ -20,29 +20,28 @@ function handleSubmit(){
         alert("Enter Within Specified Range!");
     }
     else{
+        let result = "";
+        setColor("red");
         if(userNumber>randomNumber){
-            document.querySelector("#alert").innerHTML = "Too High!";
-            document.querySelector("#alert").style.color = "red";
-            attemptCounter++;
+            result = "Too High!";
         }
         else if(userNumber<randomNumber){
-            document.querySelector("#alert").innerHTML = "Too low!";
-            document.querySelector("#alert").style.color = "red";
-            attemptCounter++;
+            result = "Too low!";
         }
         else{
-            document.querySelector("#alert").innerHTML = "Numbers Matched!";
-            document.querySelector("#alert").style.color = "green";
-            attemptCounter++;
-            document.querySelector(".gameContainer").style.display = "none";
-            document.querySelector("#heroText").innerHTML = `You Won in ${attemptCounter} Steps !`;
-            document.querySelector("#heroText").style.display = "block";
+            result = "Numbers Matched!";
+            setColor("green");
+            setDisplay(".gameContainer","none");
+            setInnerHtml("#heroText",`You Won After ${attemptCounter} Steps !`);
+            setDisplay("#heroText","block");
             setTimeout(()=>{
                 handleRestart()
             },3000);
 
         }
-        document.querySelector(".attemptsCounter").innerHTML = `Attempts Made : ${attemptCounter}`;
+        attemptCounter++;
+        setInnerHtml("#alert",result);
+        setInnerHtml(".attemptsCounter",`Attempts Made : ${attemptCounter}`);
         console.log(attemptCounter);
     }
     
@@ -52,16 +51,29 @@ function handleSubmit(){
 function startGame(){
     randomNumber = generateRandom();
     console.log(randomNumber);
-    document.querySelector(".gameContainer").style.display = "flex";
-    document.querySelector("#startGame").style.display = "none";
-    document.querySelector("#heroText").style.display = "none";
+    setDisplay(".gameContainer","flex");
+    setDisplay("#startGame","none");
+    setDisplay("#heroText","none");
 }
+
 function handleRestart(){
-    document.querySelector(".gameContainer").style.display = "none";
-    document.querySelector("#startGame").style.display = "block";
-    document.querySelector("#heroText").style.display = "none";
-    document.querySelector(".attemptsCounter").innerHTML = '';
-    document.querySelector("#alert").innerHTML = "";
+    setDisplay(".gameContainer","none");
+    setDisplay("#startGame","block");
+    setDisplay("#heroText","none");
+    setInnerHtml(".attemptsCounter",'')
+    setInnerHtml("#alert",'')
     document.querySelector("#userNumber").value = "";
     attemptCounter = 0;
+}
+
+function setDisplay(element,value){
+    document.querySelector(element).style.display = value;
+}
+
+function setInnerHtml(element,value){
+    document.querySelector(element).innerHTML = value;
+}
+
+function setColor(value){
+    document.querySelector("#alert").style.color = value;
 }
