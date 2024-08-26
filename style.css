@@ -73,3 +73,9 @@ input#userNumber{
     font-size: 45px;
     color: green;
 }
+@media screen and (max-width: 768px){
+  .gameContainer{
+  flex-direction: column;
+
+}
+}
